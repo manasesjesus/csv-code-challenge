@@ -29,6 +29,6 @@ body {
     color: red;
 }
 
-.hidden {
+.hidden, .csv-details {
     display: none;
 }

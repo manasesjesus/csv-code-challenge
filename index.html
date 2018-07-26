@@ -11,14 +11,18 @@
             <label>Select a CSV file to be processed: </label>
             <input type="file" id="cvsfile" onchange="loadCSVFile(event);">
             <br><br>
-            <div id="text-div" class="textarea"></div>
-            <br><br>
-            <section id="pro-container" class="hidden">
-                <label>Processed CSV file: </label>
+            <section class="hidden">
+                <label>CSV headings: </label>
+                <br><br>
+                <div id="head-text-div" class="textarea"></div>
+                <br><br>
+                <label>CSV values: </label>
+                <div id="text-div" class="textarea"></div>
+                <br><br>
+                <label>Processed CSV values: </label>
                 <br><br>
                 <div id="pro-text-div" class="textarea"></div>
             </section>
-
             <textarea id="original" class="hidden"></textarea>
             <textarea id="processed" class="hidden"></textarea>
         </div>

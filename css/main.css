@@ -19,7 +19,7 @@ body {
     font-family: monospace;
     font-size: 1.5em;
     padding: 3px 7px;
-    min-height: 70px;
+    min-height: 30px;
     border: 1px solid #444;
     box-shadow: 0px 0px 2px black;
     cursor: text;

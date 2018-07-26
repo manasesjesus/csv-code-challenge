@@ -12,19 +12,17 @@
             <input type="file" id="cvsfile" onchange="loadCSVFile(event);">
             <br><br>
             <section class="csv-details">
-                <label>CSV headings: </label>
+                <h4>CSV headings: </h4>
+                <div id="head-text-div" class="textarea" contenteditable></div>
                 <br><br>
-                <div id="head-text-div" class="textarea"></div>
+                <h4>CSV values: </h4>
+                <div id="text-div" class="textarea" contenteditable></div>
                 <br><br>
-                <label>CSV values: </label>
-                <div id="text-div" class="textarea"></div>
-                <br><br>
-                <label>Processed CSV values: </label>
-                <br><br>
-                <div id="pro-text-div" class="textarea"></div>
+                <h4>Processed CSV values: </h4>
+                <div id="pro-text-div" class="textarea" contenteditable></div>
             </section>
-            <textarea id="original" class="hiddden"></textarea>
-            <textarea id="processed" class="hiddden"></textarea>
+            <textarea id="original" class="hidden"></textarea>
+            <textarea id="processed" class="hidden"></textarea>
         </div>
     </body>
 </html>

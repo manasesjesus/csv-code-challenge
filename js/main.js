@@ -8,11 +8,14 @@ function loadCSVFile (event) {
         var ta_proccessed = document.getElementById("processed");
         var reader        = new FileReader();
 
+        // Called after starting a read operation to initialize the textareas and the matrix
         reader.onloadstart = function () {
             ta_original.value   = "";
             ta_proccessed.value = "";
         }
 
+        // Called when a read operation successfully completes. It separates the CSV headings
+        // from the values and process them. All get stored in the textareas and the matrix.
         reader.onload = function () {
             var lines = reader.result.split("\n");
             var delim = lines[0].indexOf(",") == -1 ? " " : ",";
@@ -32,6 +35,7 @@ function loadCSVFile (event) {
             }
         }
 
+        // Called after a read completes (either successfully or unsuccessfully)
         reader.onloadend = function() {
             if (reader.error) {
                 alert("The file was not loaded successfully. Please try again.");
@@ -39,7 +43,7 @@ function loadCSVFile (event) {
             }
             else {
                 // Get the textarea's value and create the html content of the text-div
-                // and style all "bad" values
+                // and style all "bad" values.
                 var html = ta_original.value.replace(/\n/g,"<br>").replace(/0/g,"<b>0</b>");
                 document.getElementById("text-div").innerHTML = html;
 
@@ -51,10 +55,12 @@ function loadCSVFile (event) {
             }
         }
 
+        // Called when there is an error during the load
         reader.onerror = function () {
             console.error("Error while loading " + csvfile.name + ": " + reader.error.message);
         }
 
+        // Read from blob as a string and the result will be stored on this.result after the 'load' event fires
         reader.readAsText(csvfile);
     }
     else {

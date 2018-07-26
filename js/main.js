@@ -93,6 +93,14 @@ function loadCSVFile (event) {
                 bad_lines.pop();
             }
 
+            // Set the value of the second textarea
+            for (var my=0; my<matrix.length; my++) {
+                for (var mx=0; mx<matrix[my].length; mx++) {
+                    ta_proccessed.value += matrix[my][mx];
+                    ta_proccessed.value += mx+1 < matrix[my].length ? delim : "";
+                }
+                ta_proccessed.value += my+1 < matrix.length ? "\n" : "";
+            }
         }
 
         // Called after a read completes (either successfully or unsuccessfully)
@@ -107,8 +115,9 @@ function loadCSVFile (event) {
                 var html = ta_original.value.replace(/\n/g,"<br>").replace(/0/g,"<b>0</b>");
                 document.getElementById("text-div").innerHTML = html;
 
-                // TODO: process the csv
-                ta_proccessed.value = "done";
+                // and similar for the processed textarea
+                html = only_zeros ? "<br>&nbsp; ¯\\_(ツ)_/¯ <br><br>" : ta_proccessed.value.replace(/\n/g,"<br>");
+                document.getElementById("pro-text-div").innerHTML = html;
 
                 // Show the elements
                 var hidden = document.getElementsByClassName("csv-details");

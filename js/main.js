@@ -16,7 +16,7 @@ function loadCSVFile (event) {
         }
 
         // Called when a read operation successfully completes. It separates the CSV headings
-        // from the values and process them. All get stored in the textareas and the matrix.
+        // from the values and process them. Everything gets stored in the textareas and the matrix.
         reader.onload  = function () {
             var lines  = reader.result.split(reader.result.indexOf("\r") > 0 ? "\r\n" : "\n");
             var delim  = lines[0].indexOf(",") == -1 ? " " : ",";

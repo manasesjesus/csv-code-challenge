@@ -11,3 +11,7 @@ Write the matrix with the replaced values to the output text field.
 The file is read and processed using the FileReader functions. It separates the CSV headings from the values and process them. Everything gets stored in the textareas and the matrix (two-dimensional dynamic array).
 
 To process the bad values, it searches for close good neighbors (west, east, north, south). If not close neighbors are found, it uses the Tesseract to find a further neighbor.
+
+## Example
+
+<img width="374" alt="example" src="https://user-images.githubusercontent.com/24204142/181771950-f2a530ad-8cb8-4798-8325-aac8a8bbe785.png">
